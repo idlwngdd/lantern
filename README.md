@@ -1,9 +1,24 @@
-# lantern
-## Use
+# docker 运行 Lantern，科学上网
 
-	docker run -itd --restart=always --name lantern -p 3128:3128 lihaixin/lantern
-	
-## 开机启动，每次都是干净的，防止800M流量后限速
+## 安装方法
 
-	docker run --rm --name lantern -p 3128:3128 lihaixin/lantern > ~/lantern.log 2>~/lantern.error
+    docker pull wilon/lantern
 
+    docker run -itd --restart=always --name wilon/lantern -p 3128:3128 wilon/lantern
+    
+## 使用方法
+
+##### 测试 
+
+`curl -kvx 127.0.0.1:3128 http://www.google.com/humans.txt`，能看到 *Google is built by a*... 就是成功了！
+
+##### MacOS 配置
+
+设置 -> 网络 -> 高级 -> 代理：*HTTP*、*HTTPS*填上：`127.0.0.1:3128`
+
+##### WIN 配置
+
+设置 -> 网络 -> 高级 -> 代理：*HTTP*、*HTTPS*填上：`127.0.0.1:3128`
+
+------
+有问题？<a href="https://github.com/wilon/php-number2chinese/issues" target="_blank">发issues</a>
