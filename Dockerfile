@@ -1,9 +1,20 @@
-FROM ubuntu:14.04
+FROM daocloud.io/ubuntu:14.04
 MAINTAINER Weilong Wang <wilonx@163.com>
 WORKDIR /root
-RUN apt-get update  && \
+RUN sudo mv /etc/apt/sources.list /etc/apt/sources.list.bak && \
+        echo "deb http://mirrors.aliyun.com/ubuntu/ trusty main restricted universe multiverse" >> /etc/apt/sources.list && \
+        echo "deb http://mirrors.aliyun.com/ubuntu/ trusty-security main restricted universe multiverse" >> /etc/apt/sources.list && \
+        echo "deb http://mirrors.aliyun.com/ubuntu/ trusty-updates main restricted universe multiverse" >> /etc/apt/sources.list && \
+        echo "deb http://mirrors.aliyun.com/ubuntu/ trusty-proposed main restricted universe multiverse" >> /etc/apt/sources.list && \
+        echo "deb http://mirrors.aliyun.com/ubuntu/ trusty-backports main restricted universe multiverse" >> /etc/apt/sources.list && \
+        echo "deb-src http://mirrors.aliyun.com/ubuntu/ trusty main restricted universe multiverse" >> /etc/apt/sources.list && \
+        echo "deb-src http://mirrors.aliyun.com/ubuntu/ trusty-security main restricted universe multiverse" >> /etc/apt/sources.list && \
+        echo "deb-src http://mirrors.aliyun.com/ubuntu/ trusty-updates main restricted universe multiverse" >> /etc/apt/sources.list && \
+        echo "deb-src http://mirrors.aliyun.com/ubuntu/ trusty-proposed main restricted universe multiverse" >> /etc/apt/sources.list && \
+        echo "deb-src http://mirrors.aliyun.com/ubuntu/ trusty-backports main restricted universe multiverse" >> /etc/apt/sources.list && \
+        apt-get update  && \
         apt-get -y install wget libappindicator3-1 && \
-        wget https://raw.githubusercontent.com/getlantern/lantern-binaries/master/lantern-installer-64-bit.deb && \
+        wget http://wilon.oschina.io/static/lantern-installer-64-bit.deb && \
         dpkg -i lantern-installer-64-bit.deb && \
         rm -rf lantern-installer-64-bit.deb && \
         apt-get -f install && \
