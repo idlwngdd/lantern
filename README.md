@@ -21,4 +21,4 @@
 设置 -> 网络 -> 高级 -> 代理：*HTTP*、*HTTPS*填上：`127.0.0.1:3128`
 
 ------
-有问题？<a href="https://github.com/wilon/php-number2chinese/issues" target="_blank">发issues</a>
+有问题？<a href="https://github.com/wilon/lantern/issues" target="_blank">发issues</a>
