@@ -9,10 +9,10 @@ pull 失败请选择源码安装，已更换国内daocloud.io、阿里云源。
 
 源码安装
 
-    git clone https://github.com/wilon/lantern.git
+    git clone https://github.com/slugphp/lantern.git
     cd lantern
     docker build -t wilon/lantern .
-    docker run -itd --restart=always --name wilon-lantern -p 3128:3128 wilon/lantern
+    docker run -itd --restart=always --name lantern -p 3128:3128 wilon/lantern
 
 ### 使用方法
 
