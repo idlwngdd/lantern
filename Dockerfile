@@ -14,7 +14,7 @@ RUN sudo mv /etc/apt/sources.list /etc/apt/sources.list.bak && \
         echo "deb-src http://mirrors.aliyun.com/ubuntu/ trusty-backports main restricted universe multiverse" >> /etc/apt/sources.list && \
         apt-get update  && \
         apt-get -y install wget libappindicator3-1 && \
-        wget http://wilon.oschina.io/static/lantern-installer-64-bit.deb && \
+        wget https://raw.githubusercontent.com/getlantern/lantern-binaries/master/lantern-installer-64-bit.deb || wget http://wilon.oschina.io/static/lantern-installer-64-bit.deb && \
         dpkg -i lantern-installer-64-bit.deb && \
         rm -rf lantern-installer-64-bit.deb && \
         apt-get -f install && \
