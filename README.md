@@ -5,10 +5,19 @@
 ### 安装方法
 
 ```
-git clone https://github.com/slugphp/lantern.git
+docker pull wilon/lantern
+```
+
+或者源码安装：
+```
+git clone https://github.com/wilon/lantern.git
 cd lantern
 docker build -t wilon/lantern .
-docker run -itd --restart=always --name lantern -p 3128:3128 wilon/lantern
+```
+
+启动：
+```
+docker run -itd --restart=always --name lantern -p 3128:3128 -p 8080:8080 wilon/lantern
 ```
 
 ### 测试
