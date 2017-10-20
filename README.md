@@ -1,7 +1,5 @@
 ## Docker 运行 Lantern，科学上网
 
-下载源为国内的daocloud.io、阿里云源，保证速度。
-
 ### 安装方法
 
 ```
@@ -10,7 +8,7 @@ docker pull wilon/lantern
 
 或者源码构建，更适合国内网络：
 ```
-docker build -t wilon/lantern https://raw.githubusercontent.com/wilon/lantern/master/Dockerfile
+docker build -t wilon/lantern https://raw.githubusercontent.com/wilon/lantern/master/Dockerfile-CN
 ```
 
 启动：
