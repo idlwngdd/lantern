@@ -25,7 +25,7 @@ env:
 script:
   - git remote set-url origin https://${GH_TOKEN}@${GH_REF}
   - git checkout master
-  - git show | grep '<travis@travis-ci.org>' || ./check_update.sh
+  - git show | grep 'Author' | grep '<travis@travis-ci.org>' || ./check_update.sh
 
 after_script:
   - git push --force origin master
