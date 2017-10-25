@@ -3,11 +3,7 @@
 dir="$(cd `dirname $0`; pwd)"
 echo "Workdir: $dir"
 
-version=`curl -s https://api.github.com/repos/getlantern/lantern-binaries/commits \
-    | grep '"message": "' \
-    | grep 'Lantern\s\d\.\d\.\d\s(' \
-    | head -1 \
-    | sed 's/.*\(Lantern [0-9\.]*\).*/\1/g'`
+version=`curl -s https://api.github.com/repos/getlantern/lantern-binaries/commits | grep '"message": "'| grep 'Lantern\s\d\.\d\.\d\s('| head -1 | sed 's/.*\(Lantern [0-9\.]*\).*/\1/g'`
 echo "Get latest version: $version"
 
 if [ ! -f "$dir/version" ]; then
@@ -30,11 +26,11 @@ else
     else
         echo "Tag: $tag exist"
     fi
-
-    echo $version > "$dir/version"
-    git add .
-    git commit -m "Travis CI auto update $version ()." &
 fi
+
+echo $version > "$dir/version"
+git add .
+git commit -m "Travis CI auto update $version ()." &
 
 
 
