@@ -1,4 +1,5 @@
 ## Docker 运行 Lantern，科学上网
+[![Build Status](https://travis-ci.org/wilon/lantern.svg?branch=master)](https://travis-ci.org/wilon/lantern)
 
 ### 安装方法
 
