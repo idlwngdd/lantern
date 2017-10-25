@@ -3,8 +3,6 @@
 dir="$(cd `dirname $0`; pwd)"
 echo "Workdir: $dir"
 
-curl https://api.github.com/repos/getlantern/lantern-binaries/commits | grep '"message": "' | grep 'Lantern [0-9\.]\+ ('
-
 version=`curl https://api.github.com/repos/getlantern/lantern-binaries/commits | grep '"message": "' | grep 'Lantern [0-9\.]\+' | head -1 | sed 's/.*\(Lantern [0-9\.]*\).*/\1/g'`
 echo "Get latest version: $version"
 
