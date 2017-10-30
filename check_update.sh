@@ -24,7 +24,7 @@ else
     tag=`echo $version | sed 's/Lantern //g'`
     echo "Latest tag: $tag"
 
-    if [ ! -n `git tag | grep $tag` ]; then
+    if [ `git tag | grep $tag | wc -l` = 0 ]; then
         echo "New tag: $tag"
         git tag "$tag"
     else
