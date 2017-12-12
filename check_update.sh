@@ -18,7 +18,7 @@ oldver=`cat "$dir/version"`
 
 if [ "$oldver" = "$version" ]; then
     echo 'Version not change.'
-    return 0
+    exit 1
 fi
 
 echo 'Version change.'
@@ -33,7 +33,7 @@ else
     echo "Tag: $tag exist"
 fi
 
-sed -i "1c Docker 运行 $version，科学上网" README.MD
+sed -i "1c # Docker 运行 $version，科学上网" README.MD
 echo $version > "$dir/version"
 git add .
 git commit -m "Travis CI auto update $version ()." &
