@@ -5,7 +5,7 @@
 - 输入我的邀请码 YMY7D4Q 来获得三个月的蓝灯专业版！
 ```
 
-### 安装方法
+## 安装方法
 
 ```
 docker pull wilon/lantern
@@ -21,7 +21,7 @@ docker build -t wilon/lantern https://raw.githubusercontent.com/wilon/lantern/ma
 docker run -itd --restart=always --name lantern -p 3128:3128 -p 8080:8080 wilon/lantern
 ```
 
-### 测试
+## 测试
 
 浏览器打开：`http://0.0.0.0:8080/`
 
@@ -33,11 +33,13 @@ docker run -itd --restart=always --name lantern -p 3128:3128 -p 8080:8080 wilon/
 
 `curl -kx 127.0.0.1:3128 -w %{time_namelookup}::%{time_connect}::%{time_starttransfer} https://www.google.com/humans.txt`
 
-### 使用方法
+## 使用方法
+
+端口号可能更新版本后有变化，可以`打开Lantern` -> `右侧设置` -> `HTTP(S)代理服务器` 后边跟着的 IP+端口，就是最新的地址。
 
 ##### · MacOS 配置
 
-设置 -> 网络 -> 高级 -> 代理： *HTTP*、*HTTPS*填上`127.0.0.1:3128`
+设置 -> 网络 -> 高级 -> 代理： *HTTP*、*HTTPS*填上`127.0.0.1:50361`
 
 ##### · WIN 配置
 
