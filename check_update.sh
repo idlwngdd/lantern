@@ -18,20 +18,22 @@ oldver=`cat "$dir/version"`
 
 if [ "$oldver" = "$version" ]; then
     echo 'Version not change.'
-else
-    echo 'Version change.'
-
-    tag=`echo $version | sed 's/Lantern //g'`
-    echo "Latest tag: $tag"
-
-    if [ `git tag | grep $tag | wc -l` = 0 ]; then
-        echo "New tag: $tag"
-        git tag "$tag"
-    else
-        echo "Tag: $tag exist"
-    fi
+    return 0
 fi
 
+echo 'Version change.'
+
+tag=`echo $version | sed 's/Lantern //g'`
+echo "Latest tag: $tag"
+
+if [ `git tag | grep $tag | wc -l` = 0 ]; then
+    echo "New tag: $tag"
+    git tag "$tag"
+else
+    echo "Tag: $tag exist"
+fi
+
+sed -i "1c Docker 运行 $version，科学上网" README.MD
 echo $version > "$dir/version"
 git add .
 git commit -m "Travis CI auto update $version ()." &
