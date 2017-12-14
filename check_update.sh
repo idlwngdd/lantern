@@ -18,7 +18,7 @@ oldver=`cat "$dir/version"`
 
 if [ "$oldver" = "$version" ]; then
     echo 'Version not change.'
-    exit 1
+    exit 0
 fi
 
 echo 'Version change.'
