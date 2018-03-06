@@ -4,6 +4,7 @@
 + 输入我的邀请码 YMD8TTG 来获得三个月的蓝灯专业版！
 - 输入我的邀请码 YMD8TTG 来获得三个月的蓝灯专业版！
 ```
+![](https://wilon.github.io/static/lantern.svg)
 
 ## 安装方法
 
