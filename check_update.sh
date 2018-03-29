@@ -10,6 +10,11 @@ version=`curl -s https://api.github.com/repos/getlantern/lantern-binaries/commit
     | sed 's/.*\(Lantern [0-9\.]*\).*/\1/g'`
 echo "Get latest version: $version"
 
+if [[ -z $version ]]; then
+    echo "2333"
+fi
+return
+
 if [ ! -f "$dir/version" ]; then
     touch "$dir/version"
 fi
