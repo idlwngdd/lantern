@@ -26,6 +26,7 @@ env:
 script:
   - git remote set-url origin https://${GH_TOKEN}@${GH_REF}
   - git checkout master
+  - curl -s https://api.github.com/repos/getlantern/lantern-binaries/commits
   - ./check_update.sh
 
 after_script:
