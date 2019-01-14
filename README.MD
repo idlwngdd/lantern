@@ -27,7 +27,7 @@ docker run -itd --restart=always --name lantern -p 3128:3128 -p 8080:8080 wilon/
 
 ##### · 测试是否能上Google
 
-`curl -kvx 127.0.0.1:3128 http://www.google.com/humans.txt`，能看到 **Google is built by a**... 就是成功了！
+`curl -kvx 127.0.0.1:3128 https://www.google.com/humans.txt`，能看到 **Google is built by a**... 就是成功了！
 
 ##### · 测试响应时间
 
