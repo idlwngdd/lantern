@@ -23,7 +23,7 @@ docker run -itd --restart=always --name lantern -p 3128:3128 -p 8080:8080 wilon/
 
 ## 测试
 
-浏览器打开：http://0.0.0.0:8080/
+浏览器打开：http://0.0.0.0:8080/wilonlantern
 
 ##### · 测试是否能上Google
 

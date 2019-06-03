@@ -8,7 +8,9 @@ RUN apt-get update  && \
         rm -rf lantern-installer-64-bit.deb && \
         apt-get -f install && \
         apt-get clean && \
-        rm -rf /var/cache/apt/* /var/lib/apt/lists/*
+        rm -rf /var/cache/apt/* /var/lib/apt/lists/* && \
+        mkdir /root/.lantern && \
+        echo "localHTTPToken: wilonlantern" > /root/.lantern/settings.yaml
 
 EXPOSE 3128/tcp 8080/tcp
 
