@@ -9,9 +9,8 @@ RUN apt-get update  && \
         apt-get -f install && \
         apt-get clean && \
         rm -rf /var/cache/apt/* /var/lib/apt/lists/* && \
-        mkdir /root/.lantern && \
-        echo "localHTTPToken: wilonlantern" > /root/.lantern/settings.yaml
+        mkdir /root/.lantern && 
 
-EXPOSE 3128/tcp 8080/tcp
+EXPOSE 3128/tcp 8080/tcp 23333/tcp
 
-ENTRYPOINT ["/usr/bin/lantern", "--configdir=/root", "--headless=true", "--proxyall=true", "--startup=false", "--clear-proxy-settings=false", "--addr=0.0.0.0:3128", "--uiaddr=0.0.0.0:8080"]
+ENTRYPOINT ["/usr/bin/lantern", "--configdir=/root", "--headless=true", "--proxyall=true", "--startup=false", "--clear-proxy-settings=false", "--addr=0.0.0.0:3128", "--socksaddr=0.0.0.0:23333", "--uiaddr=0.0.0.0:8080"]
