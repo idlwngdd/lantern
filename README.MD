@@ -3,8 +3,8 @@
 
 ## 安装
 
-```
 change to direcotry containing Dockerfile or Dockerfile-CN
+```
 docker build -t lantern .
 ```
 
@@ -16,11 +16,11 @@ docker run -itd --restart=always --name lantern -p 3128:3128 -p 8080:8080 -p 233
 ## 测试
 
 浏览器打开：http://0.0.0.0:8080/[localHTTPTOKEN]
-  ### Obtain localHTTPTOKEN
-  ```
-  docker exec -ti [cotainer ID] /bin/bash
-  cat settings.yaml
-  ```
+#### Obtain localHTTPTOKEN
+```
+docker exec -ti [cotainer ID] /bin/bash
+cat settings.yaml
+```
 ##### · 测试是否能上Google
 
 `curl -kvx 127.0.0.1:3128 https://www.google.com/humans.txt`，能看到 **Google is built by a**... 就是成功了！
