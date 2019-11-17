@@ -1,4 +1,4 @@
-# Lantern on Docker with socks proxy & Others
+# Docker Over GFW
 
 
 ## 安装
