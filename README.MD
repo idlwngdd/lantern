@@ -1,4 +1,4 @@
-# Lantern on Lantern with socks proxy
+# Lantern on Docker with socks proxy & Others
 
 
 ## 安装
