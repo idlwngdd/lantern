@@ -9,7 +9,7 @@ RUN apt-get update  && \
         apt-get -f install && \
         apt-get clean && \
         rm -rf /var/cache/apt/* /var/lib/apt/lists/* && \
-        mkdir /root/.lantern && 
+        mkdir /root/.lantern
 
 EXPOSE 3128/tcp 8080/tcp 23333/tcp
 
